@@ -1,0 +1,32 @@
+package main
+
+import "fmt"
+
+func main() {
+	nums := []int{2, 3, 4}
+	sum := 0
+	for _, num := range nums {
+		sum += num
+	}
+	fmt.Println("sum =", sum)
+
+	for i, num := range nums {
+		if num == 3 {
+			fmt.Println("index =", i)
+		}
+	}
+
+	kvs := map[string]string{"a": "apple", "b": "banana"}
+	for k, v := range kvs {
+		fmt.Printf("%s => %s\n", k, v)
+	}
+
+	for k := range kvs {
+		fmt.Println("key:", k)
+	}
+
+	// range 在字符串上迭代 Unicode 码点。第一个值是 rune 的起始字节索引，第二个值是 rune 本身。
+	for i, c := range "golang" {
+		fmt.Println(i, c)
+	}
+}
